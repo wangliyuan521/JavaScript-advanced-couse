@@ -1,0 +1,20 @@
+<script type="text/javascript">
+var str = "abc_def_ghi_jkl_mn";
+console.log("abc\ndefghi\\\n\'mn\'");
+
+//字符串常用操作、、function也属于方法
+var str = "abc_def_ghi_jkl_mn";
+console.log(str.split("_"));//以“_”分隔的字符串  例["abc", "def", "ghi", "jkl", "mn"]
+console.log(str.split("_",2));//以“_”分隔的前两个字符串 例["abc", "def"]
+console.log(str.concat("_opq"));//链接  "abc_def_ghi_jkl_mn_opq"
+console.log(str.substr(4,7));//截取从位置为4，长度为7的字符串
+console.log(str.substring(4,7));//"def"从位置4到位置7
+console.log(str.slice(2));//"c_def_ghi_jkl_mn"
+console.log(str.slice(2,5));//c_d"
+console.log(str.slice(2,-2));//"c_def_ghi_jkl_"
+
+console.log(str.bold());//<b>abc_def_ghi_jkl_mn</b>
+console.log(str.link());//<a href="undefined">abc_def_ghi_jkl_mn</a>
+console.log(str.fontcolor("red"));//<font color="red">abc_def_ghi_jkl_mn</font>
+console.log(str.fontsize(50));//<font size="50">abc_def_ghi_jkl_mn</font>
+</script>
