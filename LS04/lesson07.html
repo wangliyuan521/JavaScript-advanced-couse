@@ -1,0 +1,51 @@
+<script type="text/javascript">
+	var str = "abc";
+var strDescriptor = Object.getOwnPropertyDescriptor(window,"str");
+console.log(strDescriptor);
+//Object {value: "abc", writable: true, enumerable: true, configurable: false}
+
+function  sloppyFunc() {
+    str.length = 7;
+    console.log(Object.getOwnPropertyDescriptor(str,"length"));
+    //Object {value: 3, writable: false, enumerable: false, configurable: false}
+    console.log(str.length);//3
+}
+sloppyFunc();
+
+//严格模式下禁止删除未定义的变量
+delete foo;
+delete window.foo;
+'use strict';
+delete foo;
+delete window.foo;//报错
+
+function  strictFunc() {
+    'use strict';
+    console.log(Object.getOwnPropertyDescriptor(str,"length"));
+    //Object {value: 3, writable: false, enumerable: false, configurable: false}
+    str.length = 7;
+    console.log(str.length);
+}
+strictFunc();//报错
+
+function f(a, a, b) {
+    return a+b;
+}
+f(2,3,4);//非严格模式下正常执行 7
+
+"use strict";
+function f(a, a, b) {
+    return a+b;
+}
+f(2,3,4);//严格模式下报错
+
+
+function f(a){
+    "use strict";
+    a = 42;
+    return [a, arguments[0]];
+}
+var pair = f(17);
+console.log(pair[0]);//42
+console.log(pair[1]);//17
+</script>

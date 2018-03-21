@@ -1,0 +1,45 @@
+<script type="text/javascript">
+	// var j = 23;//case_111
+// var j = "23";//case_222
+// var j = new String("23");//case_default
+var j = new Number(23);//case_default
+switch (j){//全等运算符
+    case 23:
+        console.log("case_111");
+        break;
+    case "23":
+        console.log("case_222");
+        break;
+    case new Number(23):
+        console.log("case_333");
+        break;
+    default:
+        console.log("case_default");
+
+}
+
+
+var i = 65;
+switch(true){ //及格
+    case i>=60:
+        alert('及格');
+        break;
+    case i<60:
+        alert('不及格');
+        break;
+    default:
+        alert('default');
+}
+
+var i = 65;
+switch(new Boolean(true)){ //default
+    case i>=60:
+        alert('及格');
+        break;
+    case i<60:
+        alert('不及格');
+        break;
+    default:
+        alert('default');
+}
+</script>

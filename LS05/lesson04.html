@@ -1,0 +1,28 @@
+<script type="text/javascript">
+	var i=1;
+	var y = ++i + ++i + ++i;
+	console.log(y);
+	//2+3+4=9
+
+	var x = "1";
+	x+=1;
+	console.log(x);
+	//11
+
+	var x = "1";
+	x/=1;
+	console.log(x);
+	// 1
+
+	NaN===NaN//f 特例
+	{}==={}//f  指向堆区不同
+	var obj1={x:2,y:[1],z:false};
+	var obj2={x:2,y:[1],z:(new Boolean(false))};
+	console.log(obj1.x===obj2.x);//t
+	console.log(obj1.y===obj2.y);//f
+	console.log(obj1.z===obj2.z);//f
+	console.log(obj1.x==obj2.x);//t
+	console.log(obj1.y==obj2.y);//f
+	console.log(obj1.z==obj2.z);//true  隐式类型转换
+
+</script>

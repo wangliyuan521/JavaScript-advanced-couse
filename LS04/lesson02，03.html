@@ -1,0 +1,37 @@
+<script type="text/javascript">
+	function foo(){
+	var a=b=3;
+}
+foo();
+console.log("b:",b);//b:3
+console.log("a:",a);//报错
+
+//ES5 中没有块作用域
+{
+    var a = 20;
+}
+console.log("大括号外依然能访问到a:",a);
+
+or(var i = 0;i<5;i++){
+    console.log("in for ",i);
+}
+console.log("out of for ",i);
+/*
+infor 0
+infor 1
+infor 2
+infor 3
+infor 4
+out of for 5
+*/
+
+
+if(false){
+    var b = 30;
+}
+console.log(b);
+//undefind
+//uncleared是报错
+
+
+</script>

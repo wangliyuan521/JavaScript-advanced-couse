@@ -1,0 +1,31 @@
+<script type="text/javascript">
+	// 严格模式使用方式
+"use strict"//全局使用
+
+function foo() {
+    "use strict"//函数内部使用
+}
+
+function  sloppyFunc() {
+    sloppyVar = 123;
+}
+sloppyFunc();
+console.log(sloppyVar);
+
+
+function  sloppyFunc() {
+    'use strict'
+    sloppyVar = 123;
+}
+sloppyFunc();
+console.log(sloppyVar);//报错
+
+//检测是否在严格模式的方法
+"use stirct"
+function isStrictMode() {
+    return this === window?false:true;
+}
+//"use stirct" 
+console.log(isStrictMode());
+</script>
+

@@ -1,0 +1,48 @@
+<script type="text/javascript">
+	console.log("A" > "a");//false
+console.log("B".localeCompare("A")); //1
+console.log("A".localeCompare("A")); //0
+console.log("A".localeCompare("B"));//-1
+
+var a = "abc";
+var b = "def";
+var c = a+b;
+console.log(c);//abcdef
+
+var str2 = "abcdef".slice(2);
+var str3 = "abcdef".slice(2,5);
+var str4 = "abcdef".slice(-2);
+var str5 = "abcdef".slice(2,-2);
+console.log(str2,str3,str4,str5);//cdef cde ef cd
+
+var arr6 = "abcdef".split("c");//返回数组
+var arr7 = "abcdef".split("c",1);
+var arr8 = "abcdef".split("c",2);
+console.log(arr6,arr7,arr8);//["ab", "def"] ["ab"] ["ab", "def"]
+
+var str9 = "abcdef".charAt(2);
+var str10 = "abcdef".charCodeAt(3);//d的Assc码
+var str11 = "abcdefabcdef".indexOf("d",1);
+var str12 = "abcdefabcdef".indexOf("d",4);//从第4个开始找吗
+console.log(str9,str10,str11,str12);//c 100 3 9
+
+var str13 = "abcdefghijklmn";
+var str14 = str13.substr(2,5);//后一个参数代表长度
+console.log(str13,str14);//str13 未受到破坏  abcdefghijklmn cdefg
+
+var str15 = str13.substring(2,5);//后一个参数代表第几个end
+console.log(str13,str15);//str13 未受到破坏  abcdefghijklmn cde
+
+var str16 = "aaa".concat("bbb");//返回字符串
+var str17 = "    abc def     \r\n  ".trim();//返回已移除前导空格、尾随空格和行终止符的原始字符串
+console.log(str16,str17);//aaabbb abc def
+
+var str18 = "abcDEF".toLowerCase();
+var str19 = "abcDEF".toUpperCase();
+console.log(str18,str19);//abcdef ABCDEF
+
+var indexOf = "abcDEFabcDEFabcDEF".indexOf("D",6);
+var lastIndexOf = "abcDEFabcDEFabcDEF".lastIndexOf("D");
+console.log(indexOf ,lastIndexOf);//9 15
+
+</script>
