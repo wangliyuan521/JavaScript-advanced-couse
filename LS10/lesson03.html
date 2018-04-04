@@ -1,0 +1,30 @@
+<script type="text/javascript">
+{
+    var a = 4;
+}
+console.log(a);//4
+
+var userId = 123;
+document.onclick = function () {
+    console.log("userId = ",userId);
+    //alert("userId = "+userId);
+};
+
+var a=2,b=3;
+if(a<b){
+    var userId = 234;
+}
+//userId=234
+
+var userId = 123;
+document.onclick = function () {
+    console.log("userId = ",userId);
+};//123
+
+(function(){
+    var a=2,b=3;
+    if(a<b){
+        var userId = 234;
+    }
+}());//使用函数进行封装 立即执行表达式
+</script>
