@@ -1,0 +1,29 @@
+<script type="text/javascript">
+//最常见的两种立即执行表达式写法
+(function min(x,y){
+	return x<y?x:y;
+}(2,3));
+(function (x,y){
+	return x<y?x:y;
+})(2,3);//可以没有函数名
+//与运算符结合的写法
+true && function(a,b){
+	return a>b?a:b;
+}(5,9);//9
+0 && function(a,b){
+	return a>b?a:b;
+}(5,9);//0
+!function(x,y){
+	return x==y?true:false;
+}("5",5)//false
+!function(x,y){
+	return x===y?true:false;
+}("5",5)//true
+!function(x,y){
+	return 2;
+}();//false
+!function(){
+	return 0;
+}()//true
+//立即执行表达式必须加  ;
+</script>

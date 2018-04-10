@@ -1,0 +1,46 @@
+<script type="text/javascript">
+//变量共享
+function f(){
+    var getNumFuncs = [];
+    var j;
+    for(var i=0;i<10;i++){
+        getNumFuncs[i] = function(){
+            return i;
+        };
+    }
+    return getNumFuncs;
+}
+var tmp = f();
+tmp[3]();//10
+//tmp[0]()~tmp[9]();//10
+
+function f(){
+    var getNumFuncs = [];
+    var j;
+    for(var i=0;i<10;i++){
+        j = i;
+        getNumFuncs[i] = function(){
+            return j;
+        };
+    }
+    return getNumFuncs;
+}
+var tmp = f();
+tmp[3]();//9   tmp[0]()...tmp[9]()都为9
+
+//解决办法
+function f(){
+    var getNumFuncs = [];
+    var j;
+    for(var i=0;i<10;i++){
+    	(function(j){
+        	getNumFuncs[j] = function(){
+            return j;
+        	};
+    	}(i));//立即执行
+    }
+    return getNumFuncs;
+}
+var tmp = f();
+tmp[3]();//3
+</script>
