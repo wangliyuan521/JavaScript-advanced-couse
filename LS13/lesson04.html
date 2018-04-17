@@ -1,0 +1,56 @@
+<script type="text/javascript">
+var arr=[1,2,3];
+arr.__proto__;
+arr.__proto__===Array.prototype;//true
+{}.__proto__===Object.prototype;//报错  {}为代码块而不是对象
+({}).__proto__===Object.prototype;//true
+//原型的原型是null
+//通过字面量创建对象
+var o={
+	x:12
+}
+o.__proto__===Object.prototype;//true
+var o2=Object.creat(o);//creat什么o 他o2的原型就是什么
+o2.__proto__===o;//true
+var person=function(name){
+	this.name=name;
+}
+var p=new person("abc");
+p.__proto__===person.prototype;//true
+person.__proto__===function.prototype;//true
+person.__proto__.__proto__===Object.prototype;//true
+person.__proto__.__proto__.__proto__===null;//true
+
+//通过Object工场方法创建JS对象
+var newObj = Object.create(obj);//newObj的原型是obj
+newObj.age = 23;
+console.log(newObj.num);
+console.log(newObj.str);
+console.log(newObj.show());
+console.log(newObj.age);
+console.log(newObj.__proto__);
+console.log(newObj.__proto__ === obj);
+
+//构造函数的方式创建JS对象
+function Person(name,age){
+    this.name = name;
+    this.age = age;
+}
+Person.prototype.sayName = function(){
+    console.log("hello,i'm",this.name,this.age,"years old");
+};
+var person1 = new Person("Mike",21);
+person1.sayName();
+
+var objStr = new Object("xxx");
+console.log(typeof objStr);//object
+console.log(objStr instanceof String);//true
+
+var objNum = new Object(23);
+console.log(typeof objNum);//object
+console.log(objNum instanceof Number);//true
+
+var objBoolean = new Object(true);
+console.log(typeof objBoolean);//object
+console.log(objBoolean instanceof Boolean);//true
+</script>
