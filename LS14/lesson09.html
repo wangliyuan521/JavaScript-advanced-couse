@@ -1,0 +1,18 @@
+<script type="text/javascript">
+//添加属性的方法
+var obj={
+	x:1,y:2
+};
+obj.z=3;
+//直接添加属性，所有特性默认为true
+for(var k in obj){
+	console.log(k,obj[k]);
+}
+
+Object.defineProperty(obj,"w",{value:466,configurable:true});
+//通过Object.defineProperty方法添加的属性，没有添加的属性都为false
+for(var k in obj){
+	console.log(k,obj[k]);
+}//有w  但遍历不到  不可枚举
+
+</script>
