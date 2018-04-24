@@ -1,0 +1,28 @@
+<script type="text/javascript">
+function Person(age,name) {
+    this.name = name;
+    this.age = age;
+}
+Person.prototype.sayHi = function () {
+    console.log("Hi,i'm "+this.name);
+};
+var p1 = new Person(20,"Jack");
+console.log(p1.name);//Jack
+console.log(p1.age);//20
+p1.sayHi();//Hi,i'm Jack
+p1.__proto__===Person.prototype;//true
+Person.__proto__===Object.prototype;//false
+Person.__proto__===Object;//false
+Person.__proto__===Function.prototype;//true
+Person.__proto__.__proto__===Object.prototype;//true
+Person.__proto__.__proto__.__proto__===null;//true
+//共性的东西定义在原型上，相当于类，修改一处，全部修改
+p1.constructor;//定义在原型上
+p1.hasOwnProperty("constructor");
+
+var arr=new Array;
+arr.__proto__===Array.prototype;//true
+arr.__proto__.__proto__===Object.prototype//true
+arr.__proto__.__proto__.__proto__===null//true
+
+</script>
