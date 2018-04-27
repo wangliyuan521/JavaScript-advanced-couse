@@ -1,0 +1,47 @@
+<script type="text/javascript">
+//this 运行期绑定
+
+//作用域传递
+var a=1;
+function f1(){
+	var =2;
+	function f2(){
+		console.log(a,b);
+	}
+	f2();
+}
+f1();
+//this不进行作用域传递
+
+/////1111111////一般函数中的this
+//1.非严格模式下代指全局对象,严格模式下为未定义(判断是否为严格模式)
+function thisTest(){
+	console.log(this===window)
+}
+thisTest();//true
+//2.可以通过this在函数内添加、删除、修改全局对象属性
+var a=10,b="Hi";
+function thisTest(){
+	this.a=20;
+	delect this.b;
+	this.c="新添加全局变量";
+}
+thisTest();
+console.log(a,c);
+
+
+var point = {
+ x:0,
+ y:0,
+ moveTo:function(x,y){
+ 	function moveToX(x){
+ 		this.x = x;
+ 	};
+ 	function moveToY(y){
+ 		this.y = y;
+ 	}
+ 	moveToX(x);
+ 	moveToY(y);
+ }
+ };
+</script>

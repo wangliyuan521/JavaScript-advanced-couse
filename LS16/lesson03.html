@@ -1,0 +1,15 @@
+<script type="text/javascript">
+//////222222/////对象方法中的this（无函数嵌套的情况下）
+//函数作为对象的一个属性时，称之为对象的方法
+//对象方法中的this指代调用此方法的对象（无嵌套的情况下）
+var point={
+	x:0,
+	y:0,
+	moveTo:function(x,y){
+		this.x=x;
+		this.y=y;
+	}
+};
+point.moveTo(1,1)//this绑定到当前对象，即point对象
+console.log(point);
+</script>
